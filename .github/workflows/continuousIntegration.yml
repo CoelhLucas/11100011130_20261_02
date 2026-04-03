@@ -2,10 +2,10 @@ name: CI Workflow Test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   pull_request:
-  branches:
-    - main
+    branches:
+      - main
 jobs:
-  Build CI:
+  build_ci:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
