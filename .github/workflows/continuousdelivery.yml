@@ -23,7 +23,7 @@ jobs:
 
   test-deploy:
     runs-on: ubuntu-latest
-    needs: tests-delivery
+    needs: tests_delivery
     steps:
     - uses: actions/download-artifact@v8
       with:
