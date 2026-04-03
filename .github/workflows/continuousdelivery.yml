@@ -1,0 +1,20 @@
+name: CD Workflow Test
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - main #Ou qualquer outra branch
+jobs:
+  tests_delivery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cd-zipped.zip
+          path: |
+            main.py
+            README.md
