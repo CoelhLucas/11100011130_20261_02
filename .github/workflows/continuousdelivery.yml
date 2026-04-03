@@ -1,5 +1,7 @@
 name: CD Workflow Test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+permissions:
+  contents: read
 on:
   push:
     branches:
