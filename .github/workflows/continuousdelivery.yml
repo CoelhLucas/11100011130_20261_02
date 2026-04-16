@@ -35,6 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: test-deploy
     steps:
+      - name: Debug Secrets presence
+        run: | 
+          if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then echo "USERNAME MISSING"; fi
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then echo "TOKEN MISSING"; fi
       - name: Login to Docker Hub
         uses: docker/login-action@v4
         with:
