@@ -1,0 +1,14 @@
+name: Discord
+on:
+  - push
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Discord Webhook
+        uses: baked-libs/discord-webhook@main
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEB_HOOK }}
+          
