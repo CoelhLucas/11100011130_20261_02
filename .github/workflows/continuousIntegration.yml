@@ -26,3 +26,12 @@ jobs:
         uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
+
+  git:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Discord Webhook
+        uses: johnnyhuy/actions-discord-git-webhook@main
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEB_HOOK }}
