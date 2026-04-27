@@ -32,6 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Discord Webhook
-        uses: johnnyhuy/actions-discord-git-webhook@main
+       # uses: johnnyhuy/actions-discord-git-webhook@main
+        uses: baked-libs/discord-webhook@main
         with:
           webhook_url: ${{ secrets.DISCORD_WEB_HOOK }}
