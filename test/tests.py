@@ -1,9 +1,9 @@
-from unittest import result
+from unittest.mock import patch
+
+import pytest
 
 from src.main import *
-from unittest.mock import patch
-import pytest
-import pytest_asyncio
+
 
 @pytest.mark.asyncio
 async def test_root():
@@ -14,11 +14,11 @@ async def test_root():
 async def  test_lucas():
     with patch('random.randint', return_value=12345):
         result = await lucas()
-    assert result == {"Test": True, "num_aleatorio": 12345}
+    assert result == {"Test": True, "Num aleatorio": 12345}
 
 @pytest.mark.asyncio
 async def  test_estudante_cadastro():
-    estudante_teste = Estudante(nome="Nome", curso="Curso", ativo=False)
+    estudante_teste = Estudante(nome="Nome", curso="curso", ativo=False)
     result = await estudante_cadastro(estudante_teste)
     assert estudante_cadastro == result
 
