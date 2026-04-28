@@ -5,8 +5,6 @@ from unittest.mock import patch
 def test_root():
     assert root() == {"message": "Hello World"}
 
-# 127.0.0.1:8000/lucas
-
 def test_lucas():
     with patch('random.randint', return_value=12345):
         result = lucas();
@@ -14,7 +12,7 @@ def test_lucas():
 
 def test_estudante_cadastro():
     estudante_teste = Estudante(nome="Nome", curso="Curso", ativo=False)
-    assert estudante_teste == estudante_cadastro()
+    assert estudante_teste == estudante_cadastro(estudante_teste)
 
 def test_estudante_update_negativo():
     assert not estudante_update(-5)
