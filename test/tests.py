@@ -20,7 +20,7 @@ async def  test_lucas():
 async def  test_estudante_cadastro():
     estudante_teste = Estudante(nome="Nome", curso="curso", ativo=False)
     result = await estudante_cadastro(estudante_teste)
-    assert estudante_cadastro == result
+    assert estudante_teste == result
 
 @pytest.mark.asyncio
 async def  test_estudante_update_negativo():
